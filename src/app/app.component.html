@@ -1,56 +1,33 @@
- <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  </div>
- <div class="content-section implementation">
-  <h3 class="first">First name</h3>
-  <div class="ui-g ui-fluid">
-      <div class="ui-g-12 ui-md-4">
-          <div class="ui-inputgroup">
-              <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
-              <input type="text" pInputText placeholder="Enter first name">         
-          </div>
-      </div>
-      <div class="content-section implementation">
-        <h3 class="first">Last name</h3>
-        <div class="ui-g ui-fluid">
-            <div class="ui-g-12 ui-md-4">
-                <div class="ui-inputgroup">
-                    <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
-                    <input type="text" pInputText placeholder="Enter last name">         
-                </div>
-            </div>
-            <div class="content-section implementation">
-              <h3 class="first">Contact Number</h3>
-              <div class="ui-g ui-fluid">
-                  <div class="ui-g-12 ui-md-4">
-                      <div class="ui-inputgroup">
-                          <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
-                          <!-- <input pInputText type="number" >          -->
-                          <input type="tel" pattern="^\d{3}-\d{3}-\d{4}$" required>
-                      </div>
-                  </div>
-                  <div class="content-section implementation">
-                    <h3 class="first">Personal Id</h3>
-                    <div class="ui-g ui-fluid">
-                        <div class="ui-g-12 ui-md-4">
-                            <div class="ui-inputgroup">
-                                <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
-                    <input type="text" pInputText placeholder="Email" class="ng-dirty ng-invalid">
-                    </div>
-                </div>
-                <!-- <div class="content-section implementation">
-                  <h3 class="first">Course Duration</h3>
-                  <p-dropdown [options]="durations"  placeholder="Select a duration" optionLabel="name" ></p-dropdown> -->
-                <div class="content-section implementation">
-                  <h3 class="first">Course</h3>
-                  <!-- <div class="ui-g" style="width:250px;margin-bottom:10px"> -->
-                      <p-checkbox name="group1" value="Angular 2+" label="Angular 2+" ></p-checkbox>
-                      <p-checkbox name="group1" value="React" label="React" ></p-checkbox>
-                      <div class="ui-g-12"><p-checkbox name="group1" value="Java Script" label="Java Script" ></p-checkbox></div>
-                      <div class="ui-g-12"><p-checkbox name="group1" value="Type Script" label="Type Scrip" ></p-checkbox></div>
-                      <div class="ui-g-12"><p-checkbox name="group1" value="Jquery" label="Jquery" ></p-checkbox></div>
-                      <div class="ui-g-12"><p-checkbox name="group1" value="Core java" label="Core java" ></p-checkbox></div>
-                  </div>
-              
+<form #form="ngForm" class="form">
+  <span class="ui-float-label">
+    <input id="float-input" type="text" size="30" name="uname" [(ngModel)]="sys.name" pInputText>
+    <label for="float-input">Name</label>
+  </span>
+  <br>
+  <div class="row2">
+    <div class="ageblock">
+      <span class="ui-float-label">
+        <input id="float-input" type="number" size="2" name="age" [(ngModel)]="sys.age" pInputText>
+        <label for="float-input">Age</label>
+      </span>
+    </div>
+    <div class="genderblock">
+      <label>Gender:&nbsp;</label>
+      <p-radioButton name="groupname" value="male" label="Male" [(ngModel)]="sys.gender"></p-radioButton>
+      <p-radioButton name="groupname" value="female" label="Female" [(ngModel)]="sys.gender"></p-radioButton>
+    </div>
+  </div><br>
+  <span class="ui-float-label">
+    <input id="float-input" type="email" size="30" name="email" [(ngModel)]="sys.email" pInputText>
+    <label for="float-input">E-mail</label>
+  </span>
+  <br>
+  <span class="ui-float-label">
+     <input id="float-input" type="text" name="cc" size="30" maxlength="10" [(ngModel)]="sys.phone" pInputText [pKeyFilter]="ccRegex">
+     <label for="float-input" >Phone</label>
+  </span>
+  <br>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" width="425"></p-confirmDialog>
+
+<button type="text" class="float-right" (click)="confirm()" pButton icon="pi pi-check" label="Submit"></button>
+</form>

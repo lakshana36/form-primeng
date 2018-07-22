@@ -1,20 +1,26 @@
 import { Component } from '@angular/core';
+import { ConfirmationService } from '../../node_modules/primeng/api';
+const system={
+name:'',age:'',gender:'',email:'',phone:''
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Course Registration';
-  // durations=[];
-  // name:string;
-  // constructor(){
-  //   this.durations = [
-  //     {name: '3months'},
-  //     {name: '6 months'},
-  //     {name: '9 months'},
-  //     {name: '1 year'}
-  //   ];
+  title = 'app';
+  ccRegex: RegExp = /[0-9]{10}}$/;
+  sys=system; 
+  constructor(private confirmationService: ConfirmationService) {}
 
-  
+  confirm() {
+      this.confirmationService.confirm({
+          message: 'Are you sure that you want to Submit?',
+          accept: () => {
+              //Actual logic to perform a confirmation
+            console.log(this.sys)
+          }
+      });
+  }
 }

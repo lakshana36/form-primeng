@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "studentform": {
+    "PublishSmallModule": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/studentform",
+            "outputPath": "dist/PublishSmallModule",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,7 +23,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/omega/theme.css",
+              "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": []
           },
@@ -50,18 +53,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "studentform:build"
+            "browserTarget": "PublishSmallModule:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "studentform:build:production"
+              "browserTarget": "PublishSmallModule:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "studentform:build"
+            "browserTarget": "PublishSmallModule:build"
           }
         },
         "test": {
@@ -95,7 +98,7 @@
         }
       }
     },
-    "studentform-e2e": {
+    "PublishSmallModule-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +106,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "studentform:serve"
+            "devServerTarget": "PublishSmallModule:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "studentform:serve:production"
+              "devServerTarget": "PublishSmallModule:serve:production"
             }
           }
         },
@@ -123,5 +126,5 @@
       }
     }
   },
-  "defaultProject": "studentform"
+  "defaultProject": "PublishSmallModule"
 }
