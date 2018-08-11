@@ -32,4 +32,6 @@ import {InputMaskModule} from 'primeng/inputmask';
   providers: [ConfirmationService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  
+ }
