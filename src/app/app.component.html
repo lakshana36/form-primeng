@@ -1,3 +1,8 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
 <form #form="ngForm" class="form">
   <span class="ui-float-label">
     <input id="float-input" type="text" size="30" name="uname" [(ngModel)]="sys.name" pInputText>
@@ -10,7 +15,15 @@
         <input id="float-input" type="number" size="2" name="age" [(ngModel)]="sys.age" pInputText>
         <label for="float-input">Age</label>
       </span>
-    </div>
+    </div><br><br>
+    <div>
+      <span class="ui-float-label"> 
+          <!-- <p-calendar [(ngModel)]="sys.dob" [inline]="true"></p-calendar> -->
+        <!-- <label for="float-input">DOB</label> -->
+        <p-calendar [(ngModel)]="sys.dateValue" dateFormat="dd.mm.yy"></p-calendar>
+        <label for="float-input">DOB</label>
+      </span>
+    </div><br>
     <div class="genderblock">
       <label>Gender:&nbsp;</label>
       <p-radioButton name="groupname" value="male" label="Male" [(ngModel)]="sys.gender"></p-radioButton>
@@ -23,7 +36,8 @@
   </span>
   <br>
   <span class="ui-float-label">
-     <input id="float-input" type="text" name="cc" size="30" maxlength="10" [(ngModel)]="sys.phone" pInputText [pKeyFilter]="ccRegex">
+     <!-- <input id="float-input" type="text" name="cc" size="30" maxlength="10" [(ngModel)]="sys.phone" pInputText [pKeyFilter]="ccRegex"> -->
+     <p-inputMask [(ngModel)]="sys.phone" mask="9999999999"></p-inputMask>
      <label for="float-input" >Phone</label>
   </span>
   <br>

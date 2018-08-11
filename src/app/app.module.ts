@@ -10,6 +10,8 @@ import {ConfirmationService} from 'primeng/api';
 import {KeyFilterModule} from 'primeng/keyfilter';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
+import {CalendarModule} from 'primeng/calendar';
+import {InputMaskModule} from 'primeng/inputmask';
 @NgModule({
   declarations: [
     AppComponent
@@ -23,7 +25,9 @@ import {MessageModule} from 'primeng/message';
     ConfirmDialogModule,
     KeyFilterModule,
     MessagesModule,
-    MessageModule
+    MessageModule,
+    CalendarModule,
+    InputMaskModule
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent]
